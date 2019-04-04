@@ -13,7 +13,7 @@ const token = "NTYzMjI2ODU1NjI1MTk1NTMz.XKWRkw.2wTtWmG4X_p7PD2BH853U_BZOPo";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
-  client.user.setGame(`Support Magic |${prefix}new`);
+  client.user.setGame(`${prefix}new`);
 });
 
 
@@ -55,14 +55,12 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
+        message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        message.channel.send(`:white_check_mark: Your Ticket Has Been Opened ,`);
-        const embed = new Discord.RichEmbed()
-        .setColor(0xCF40FA)
-        .addField(`Dear ${message.author.username}!`, 
+        .addField(`Hey ${message.author.username}!`,
 
-`The **Support Team** Will Respond As Soon As Possible ,
+ `The Support Team Will Respond As Soon As Possible ,
 While At It , Please Describe The Problem.
 
 So Please Wait.`)
@@ -94,3 +92,4 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 });
 
 client.login(token);
+
