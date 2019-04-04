@@ -55,17 +55,12 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-         const embed = new Discord.RichEmbed()
-        .setColor(0xCF40FA)
-        .addtitle(`:white_check_mark: Your Ticket Has Been Opened.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        .addfield(`Hey ${message.author.username}!`,
-
- `The **Support Team** Will Respond As Soon As Possible ,
-While At It , Please Describe The Problem.
-
-So Please Wait.`)
+        message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
+        const embed = new Discord.RichEmbed()
+        .setColor(0xCF40FA)
+        .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
         .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
