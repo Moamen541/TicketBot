@@ -55,7 +55,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-        message.channel.send(``:white_check_mark: Your Ticket Has Been Opened ,.``);
+        message.channel.send(`:white_check_mark: Your Ticket Has Been Opened ,.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
         .addField(`Dear ${author.mention}!`, 
