@@ -57,7 +57,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
         });
          const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        .addDescription(`:white_check_mark: Your Ticket Has Been Opened.`);
+        .addtitle(`:white_check_mark: Your Ticket Has Been Opened.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
         .addfield(`Hey ${message.author.username}!`,
