@@ -58,7 +58,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
         message.channel.send(`:white_check_mark: Your Ticket Has Been Opened ,`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        .addField(`Dear ${author.mention}!`, 
+        .addField(`Dear ${message.author.username}!`, 
 
 `The **Support Team** Will Respond As Soon As Possible ,
 While At It , Please Describe The Problem.
