@@ -39,8 +39,8 @@ client.on("message", (message) => {
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
     const reason = message.content.split(" ").slice(1).join(" ");
     if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
-    if (message.guild.channels.exists("name", "ticket-")) return message.channel.send(`You already have a ticket open.`);
-    message.guild.createChannel(`Ticket`, "text").then(c => {
+    if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
+    message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
         let role = message.guild.roles.find("name", "Support Team");
         let role2 = message.guild.roles.find("name", "@everyone");
         c.overwritePermissions(role, {
@@ -55,12 +55,11 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-    message.channel.send(`:white_check_mark: Your Ticket Has Been Opened.` )
+        message.channel.send(`:white_check_mark: Your Ticket Has Been Opened.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
         .addField(`Hey ${message.author.username}!`, `
-
-The **Support Team** Will Respond As Soon As Possible ,
+The Support Team Will Respond As Soon As Possible ,
 While At It , Please Describe The Problem.
 
 So Please Wait.`)
