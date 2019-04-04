@@ -8,8 +8,8 @@ function clean(text) {
         return text;
 }
 
-const prefix = "Your Prefix";
-const token = "Token Your Bot";
+const prefix = "-";
+const token = "NTYzMjI2ODU1NjI1MTk1NTMz.XKWRkw.2wTtWmG4X_p7PD2BH853U_BZOPo";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
@@ -55,10 +55,15 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-        message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
+        message.channel.send(`:white_check_mark: Your Ticket Has Been Opened , #${c.name}.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
+        .addField(`Dear ${message.author.mention}!`, 
+
+`The **Support Team** Will Respond As Soon As Possible ,
+While At It , Please Describe The Problem.
+
+So Please Wait..`)
         .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
