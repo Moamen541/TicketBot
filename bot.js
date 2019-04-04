@@ -63,7 +63,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
 `The **Support Team** Will Respond As Soon As Possible ,
 While At It , Please Describe The Problem.
 
-So Please Wait..`)
+So Please Wait.`)
         .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
