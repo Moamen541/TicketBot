@@ -12,7 +12,7 @@ const prefix = "-";
 const token = "NTYzMjI2ODU1NjI1MTk1NTMz.XKWRkw.2wTtWmG4X_p7PD2BH853U_BZOPo";
 
 client.on("ready", () => {
-  console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
+  console.log("Odin's Ticket | Logged in! Server count: ${client.guilds.size}");
   client.user.setGame(`Support Magic |${prefix}new`);
 });
 
@@ -55,7 +55,12 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-        message.channel.send(`:white_check_mark: Your Ticket Has Been Opened.`);
+        const Res = new Discord.RichEmbed()
+            .setDescription(":white_check_mark: Your Ticket Has Been Opened.")
+            .setColor(#008000)
+        message.channel.sendEmbed(Res);
+    }
+                                                                            }                                                                                                                                      
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
         .addField(`Hey ${message.author.username}!`, `
