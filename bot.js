@@ -55,6 +55,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
+        if (message.content.toLowerCase().startsWith(prefix + `new`)) {
         const Res = new Discord.RichEmbed()
             .setDescription(":white_check_mark: Your Ticket Has Been Opened.")
             .setColor(#008000);
